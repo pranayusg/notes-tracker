@@ -1,0 +1,92 @@
+<div class="auth">
+  <a href="/" class="back"><i class="bi bi-arrow-left"></i></a>
+
+  <div class="auth-content">
+    <h1 class="mb-5">Welcome back</h1>
+    <form novalidate (ngSubmit)="save(signinForm)" #signinForm="ngForm">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="emailId">Email</label>
+        <div class="col-md-8">
+          <input
+            class="form-control"
+            id="emailId"
+            type="email"
+            placeholder="Email (required)"
+            required
+            email
+            [(ngModel)]="userSignIn.email"
+            name="email"
+            #emailVar="ngModel"
+            [ngClass]="{
+              'is-invalid':
+                (emailVar.touched || emailVar.dirty) && !emailVar.valid
+            }"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="emailVar.errors?.['required']">
+              Please enter your email address.
+            </span>
+            <span *ngIf="emailVar.errors?.['email']">
+              Please enter a valid email address.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="passwordId">Password</label>
+        <div class="col-md-8">
+          <input
+            class="form-control"
+            id="passwordId"
+            type="password"
+            placeholder="Password (required)"
+            required
+            minlength="4"
+            [(ngModel)]="userSignIn.password"
+            name="password"
+            #passwordVar="ngModel"
+            [ngClass]="{
+              'is-invalid':
+                (passwordVar.touched || passwordVar.dirty) && !passwordVar.valid
+            }"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="passwordVar.errors?.['required']">
+              Please enter password.
+            </span>
+            <span *ngIf="passwordVar.errors?.['minlength']">
+              The password must be greater then 4 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-3 mt-4">
+        <div class="col-md-12" style="float: right; margin: auto; width: 50%">
+          <button
+            class="btn btn-secondary mr-3"
+            style="width: 80px; margin-right: 5px"
+            (click)="resetForm(signinForm)"
+          >
+            Reset
+          </button>
+
+          <button
+            class="btn btn-primary mr-3"
+            type="submit"
+            style="width: 80px"
+            [title]="
+              signinForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            "
+            [disabled]="!signinForm.valid"
+          >
+            Sign in
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

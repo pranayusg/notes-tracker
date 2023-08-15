@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+.auth {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #c2d5ff;
+  animation: transitionIn 1s;
+}
+
+.auth-content {
+  width: 65%;
+  margin: auto;
+}
+
+.back {
+  margin-left: 20px;
+  color: black;
+  font-size: x-large;
+}

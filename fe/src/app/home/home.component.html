@@ -1,0 +1,30 @@
+<div class="outer">
+  <div class="image">
+    <img [src]="imageUrl" alt="notesImage" />
+  </div>
+  <div class="texts">
+    <h1 class="app-name">Notes Tracker</h1>
+    <p>All Your <span class="change">Notes</span> In <br />One Place</p>
+  </div>
+  <div class="getstarted">
+    <button
+      *ngIf="isLoggedIn === false"
+      class="btn btn-primary"
+      (click)="handleCreateAccountClick()"
+    >
+      Create Account
+    </button>
+
+    <button
+      *ngIf="isLoggedIn === false"
+      class="btn btn-primary"
+      (click)="handleSignInClick()"
+    >
+      Sign in
+    </button>
+
+    <button *ngIf="isLoggedIn" class="btn btn-primary" (click)="goToMyNotes()">
+      Track My Notes
+    </button>
+  </div>
+</div>
