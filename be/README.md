@@ -34,7 +34,7 @@ $ npm install
 
 ## Setting up database
 [Postgres](https://www.postgresql.org/) database is used for the current project.
-Create an empty database with the name **notes_management** 
+Create an empty database with the name **notes_management** .
 
 
 ## Setting up environment files and running the migration script
