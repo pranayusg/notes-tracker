@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpoint: 'YOUR_PROD_BE_URL',
+  apiEndpoint: 'https://pranayusg-notes-tracker.onrender.com/',
 };
