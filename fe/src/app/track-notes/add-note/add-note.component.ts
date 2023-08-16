@@ -94,4 +94,9 @@ export class AddNoteComponent {
   resetForm(userSignInForm: NgForm): void {
     userSignInForm.reset();
   }
+
+  ngOnDestroy(): void {
+    this.notifier.next();
+    this.notifier.complete();
+  }
 }

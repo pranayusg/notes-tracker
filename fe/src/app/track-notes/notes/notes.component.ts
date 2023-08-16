@@ -71,4 +71,9 @@ export class NotesComponent {
         error: (err) => (this.errorMessage = err),
       });
   }
+
+  ngOnDestroy(): void {
+    this.notifier.next();
+    this.notifier.complete();
+  }
 }

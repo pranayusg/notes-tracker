@@ -99,4 +99,9 @@ export class ShareNoteComponent {
   onSuccess(): void {
     this.modalService.dismissAll();
   }
+
+  ngOnDestroy(): void {
+    this.notifier.next();
+    this.notifier.complete();
+  }
 }
