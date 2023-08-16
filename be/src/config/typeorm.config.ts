@@ -5,26 +5,16 @@ export const getTypeOrmConfiguration = async (
   configService: ConfigService,
 ): Promise<TypeOrmModuleOptions> => ({
   type: 'postgres',
-  host:
-    process.env.STAGE === 'dev'
-      ? configService.get('DB_HOST')
-      : process.env.DB_HOST,
-  port:
-    process.env.STAGE === 'dev'
-      ? configService.get('DB_PORT')
-      : Number(process.env.DB_PORT),
-  username:
-    process.env.STAGE === 'dev'
-      ? configService.get('DB_USERNAME')
-      : process.env.DB_USERNAME,
-  password:
-    process.env.STAGE === 'dev'
-      ? configService.get('DB_PASSWORD')
-      : process.env.DB_PASSWORD,
-  database:
-    process.env.STAGE === 'dev'
-      ? configService.get('DB_DATABASE')
-      : process.env.DB_DATABASE,
+  ...(process.env.STAGE === 'dev' && {
+    host: configService.get('DB_HOST'),
+    port: configService.get('DB_PORT'),
+    username: configService.get('DB_USERNAME'),
+    password: configService.get('DB_PASSWORD'),
+    database: configService.get('DB_DATABASE') as string,
+  }),
+  ...(process.env.STAGE === 'prod' && {
+    url: process.env.DB_URL,
+  }),
   synchronize: false,
   entities: ['dist/**/*.entity{.ts,.js}'],
   migrations: ['dist/migration/*{.ts,.js}'],
