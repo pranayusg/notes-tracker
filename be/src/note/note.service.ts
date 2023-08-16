@@ -69,25 +69,24 @@ export class NoteService {
 
   async findByNote(note) {
     return await this.noteRepository.find({
-      where: [{ note: ILike(`%${note}%`) }, { title: ILike(`%${note}%`) }],
+      where: [{ title: ILike(`%${note}%`) }, { text: ILike(`%${note}%`) }],
     });
   }
 
   // Notes Sharing
 
-  async createSharedNote(
-    creatorUserId: any,
-    createSharedNoteDto: CreateSharedNoteDto,
-  ) {
+  async createSharedNote(id: any, createSharedNoteDto: CreateSharedNoteDto) {
     const sharedNoteExists = await this.sharedNoteRepository.find({
-      where: { creatorUser: creatorUserId },
+      where: { creatorUser: id, note: createSharedNoteDto.noteId },
     });
 
     if (sharedNoteExists) {
-      await this.sharedNoteRepository.delete({ creatorUser: creatorUserId });
+      await sharedNoteExists.forEach(async (sharedUser: any) => {
+        await this.sharedNoteRepository.delete(sharedUser.id);
+      });
     }
 
-    const creatorUser = await this.usersService.findOne(creatorUserId);
+    const creatorUser = await this.usersService.findOne(id);
     const note = await this.noteRepository.findOne({
       where: { id: createSharedNoteDto.noteId },
     });
@@ -111,6 +110,15 @@ export class NoteService {
   async getNotesSharedWithMe(sharedUserId: string) {
     return await this.sharedNoteRepository.find({
       where: { sharedUser: sharedUserId },
+      order: {
+        createdAt: 'DESC',
+      },
+    });
+  }
+
+  async getSharedUers(id: string, noteId: string) {
+    return await this.sharedNoteRepository.find({
+      where: { creatorUser: id, note: noteId },
       order: {
         createdAt: 'DESC',
       },

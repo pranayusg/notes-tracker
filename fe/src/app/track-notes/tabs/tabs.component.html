@@ -1,0 +1,17 @@
+<div>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>My Notes</a>
+      <ng-template ngbNavContent
+        ><app-notes type="my" [reloadNotes]="reloadNotes"></app-notes
+      ></ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Notes shared with me</a>
+      <ng-template ngbNavContent
+        ><app-notes type="shared"></app-notes
+      ></ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+</div>

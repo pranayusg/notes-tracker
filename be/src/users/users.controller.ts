@@ -25,12 +25,12 @@ export class UsersController {
     return await this.usersService.create(createUserDto);
   }
 
-  // @Get()
-  // @ApiBearerAuth()
-  // @UseGuards(JwtAuthGuard)
-  // findAll() {
-  //   return this.usersService.findAll();
-  // }
+  @Get()
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  findAll(@GetUser() user) {
+    return this.usersService.findAll(user.id);
+  }
 
   @Get()
   @ApiBearerAuth()

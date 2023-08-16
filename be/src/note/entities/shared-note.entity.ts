@@ -20,7 +20,7 @@ export class SharedNote {
   @JoinColumn()
   creatorUser: User;
 
-  @ManyToOne(() => User, { cascade: true })
+  @ManyToOne(() => User, { eager: true, cascade: true })
   @JoinColumn()
   sharedUser: User;
 

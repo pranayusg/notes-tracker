@@ -21,8 +21,18 @@ export class UsersService {
     return await this.repository.createUser(createUserDto);
   }
 
-  async findAll() {
-    return await this.repository.find();
+  async findAll(id: string) {
+    const allUsers = await this.repository.find();
+
+    const otherUsers = allUsers.filter(function (user) {
+      return user.id !== id;
+    });
+
+    const users = [];
+    otherUsers.forEach((user) => {
+      users.push({ id: user.id, username: user.userName });
+    });
+    return users;
   }
 
   async findOne(id: string) {

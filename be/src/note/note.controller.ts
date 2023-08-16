@@ -114,4 +114,13 @@ export class NoteController {
   async findNotesSharedWithMe(@GetUser() user) {
     return this.noteService.getNotesSharedWithMe(user.id);
   }
+
+  @ApiOkResponse({ description: 'Success' })
+  @ApiNotFoundResponse({ description: 'Note not found' })
+  @Get('/shared/note/users')
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  async findSharedUsers(@Query('noteId') noteId: string, @GetUser() user) {
+    return this.noteService.getSharedUers(user.id, noteId);
+  }
 }

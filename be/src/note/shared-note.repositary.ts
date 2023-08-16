@@ -14,10 +14,4 @@ export class SharedNoteRepository extends Repository<SharedNote> {
     await this.save(newSharedNote);
     return newSharedNote;
   }
-
-  async retrieveAllSharedNoteWithMe(sharedUserId): Promise<any> {
-    return await this.find({
-      where: { user: sharedUserId },
-    });
-  }
 }

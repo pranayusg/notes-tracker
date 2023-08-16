@@ -1,0 +1,41 @@
+<div class="card-container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-10 ml-0 pl-0 info">
+          <p class="title">{{ noteItem.title }}</p>
+          <div *ngIf="noteType === 'my'" class="moment-date">
+            {{ noteItem.user.createdAt | amDateFormat : "LL" }}
+          </div>
+        </div>
+        <div *ngIf="noteType === 'my'" class="col-md-1 mr-0 pr-0">
+          <app-share-note [noteId]="noteItem.id"></app-share-note>
+        </div>
+        <div *ngIf="noteType !== 'my'" class="col-md-3 mr-0 pr-0">
+          <p>Shared by: {{ noteItem.user.userName }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div id="text">"{{ noteItem.text }}"</div>
+    </div>
+    <div *ngIf="noteType === 'my'" class="card-footer">
+      <div class="row">
+        <div class="col-md-6 icons">
+          <app-add-note
+            type="edit"
+            [noteId]="noteItem.id"
+            (reloadNotes)="onReloadNotes($event)"
+          ></app-add-note>
+        </div>
+        <div class="col-md-6 icons">
+          <i
+            class="bi bi bi-trash"
+            style="cursor: pointer"
+            (click)="onDeleteClick(noteItem.id)"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

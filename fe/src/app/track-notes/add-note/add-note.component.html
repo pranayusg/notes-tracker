@@ -1,0 +1,103 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      {{ type === "add" ? "New" : "Edit" }} Note
+    </h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form novalidate (ngSubmit)="save(newNoteForm)" #newNoteForm="ngForm">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="noteId">Title</label>
+        <div class="col-md-8">
+          <input
+            class="form-control"
+            id="noteId"
+            type="text"
+            placeholder="Title (required)"
+            required
+            minlength="3"
+            [(ngModel)]="newNote.title"
+            name="title"
+            #noteVar="ngModel"
+            [ngClass]="{
+              'is-invalid': (noteVar.touched || noteVar.dirty) && !noteVar.valid
+            }"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="noteVar.errors?.['required']">
+              Title is required.
+            </span>
+            <span *ngIf="noteVar.errors?.['minlength']">
+              Title must be longer than 3 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="textId">Text</label>
+        <div class="col-md-8">
+          <input
+            class="form-control"
+            id="textId"
+            type="text"
+            placeholder="Text (required)"
+            required
+            minlength="5"
+            [(ngModel)]="newNote.text"
+            name="text"
+            #textVar="ngModel"
+            [ngClass]="{
+              'is-invalid': (textVar.touched || textVar.dirty) && !textVar.valid
+            }"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="textVar.errors?.['required']">
+              Please enter note text.
+            </span>
+            <span *ngIf="textVar.errors?.['minlength']">
+              Text must be greater then 5 characters.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-3 mt-4">
+        <div class="col-md-12" style="float: right; margin: auto; width: 50%">
+          <button
+            class="btn btn-secondary mr-3"
+            style="width: 80px; margin-right: 5px"
+            (click)="resetForm(newNoteForm)"
+          >
+            Reset
+          </button>
+
+          <button
+            class="btn btn-success mr-3"
+            type="submit"
+            style="width: 80px"
+            [title]="
+              newNoteForm.valid
+                ? 'Save your entered data'
+                : 'Disabled until the form data is valid'
+            "
+            [disabled]="!newNoteForm.valid"
+          >
+            {{ type === "add" ? "Create" : "Update" }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<a class="nav-link" style="cursor: pointer" (click)="open(content)">
+  <div *ngIf="type === 'add'">New Note</div>
+  <i *ngIf="type === 'edit'" class="bi bi-pencil-square"></i>
+</a>

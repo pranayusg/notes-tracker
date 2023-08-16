@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a class="navbar-brand">{{ title }} </a>
+    <ul class="nav nav-pills">
+      <li>
+        <a class="nav-link" style="cursor: pointer" routerLink="/">Home </a>
+      </li>
+      <li>
+        <app-add-note (reloadNotes)="onReloadNotes($event)"></app-add-note>
+      </li>
+      <li>
+        <a class="nav-link" style="cursor: pointer" (click)="logOut()"
+          >Sign out
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- <div class="user-jumbotron">
+    <div class="user-content">
+      <h5 class="user-jumbotron-content">{{ "Welcome " + username }}</h5>
+    </div>
+  </div> -->
+
+  <note-tabs [reloadNotes]="shouldReloadNotes"></note-tabs>
+</div>

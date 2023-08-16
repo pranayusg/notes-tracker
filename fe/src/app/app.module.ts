@@ -8,21 +8,23 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeModule } from './home/home.module';
-import { MyNotesComponent } from './my-notes/my-notes.component';
+import { MyNotesComponent } from './track-notes/my-notes/my-notes.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './home/auth.guard';
-import { SignInGuard } from './my-notes/sign-in.guard';
+import { SignInGuard } from './track-notes/sign-in.guard';
+import { MyNotesModule } from './track-notes/notes.module';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent, MyNotesComponent],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
     HomeModule,
+    MyNotesModule,
 
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

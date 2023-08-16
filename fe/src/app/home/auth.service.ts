@@ -7,12 +7,13 @@ import { Injectable } from '@angular/core';
 import { Observable, tap, catchError, throwError } from 'rxjs';
 import { userSignUpBody, userSignUpResponse } from '../sign-up/userSignup';
 import { userSignInBody, userSignInResponse } from '../sign-in/userSignin';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private Url = 'http://localhost:4000';
+  private Url = environment.apiEndpoint;
 
   constructor(private http: HttpClient) {}
 
