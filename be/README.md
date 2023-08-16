@@ -32,6 +32,26 @@
 $ npm install
 ```
 
+## Setting up database
+[Postgres](https://www.postgresql.org/) database is used for the current project.
+Create an empty database with the name **notes_management** 
+
+
+## Setting up environment files and running the migration script
+- Enter your database configurations in these two files
+  ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/5c34b58f-965b-40aa-9e4a-c0674e83e534)
+
+- Once done run the below command to generate tables
+  
+  ```bash
+  # migration run
+  $ npm run migration:run
+  ```
+- Once migrations are run below tables will get created 
+
+ ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/fa60c15b-9d15-49ab-afde-eb58edd389d9)
+
+
 ## Running the app
 
 ```bash
@@ -44,6 +64,13 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## API documentation
+
+ API documentation can be found at HOST_URL/api
+
+ ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/43fe48ed-2bac-497e-baf3-6dde7e6c0f74)
+
 
 ## Test
 
@@ -58,16 +85,24 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+```bash
+# unit tests
+$ npm run test
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# e2e tests
+$ npm run test:e2e
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# test coverage
+$ npm run test:cov
+```
 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+
+
+
+
+
