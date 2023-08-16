@@ -23,7 +23,8 @@
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/a7ffd160-3bc8-4040-a1c7-fe3c6525013a)
  
  - 404
-   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/a309247e-c78a-4b07-87bd-6e2dbd76a6f1)
+   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/40974a3f-33ff-4499-ad35-bb84b4bb6b4a)
+
 
  # Main Functionalities  
  - User JWT authentication.
