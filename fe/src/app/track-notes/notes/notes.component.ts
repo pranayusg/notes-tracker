@@ -13,6 +13,7 @@ export class NotesComponent {
   notesData: any = [];
   errorMessage = '';
   searchText: string = '';
+  otherUsers = [];
 
   private notifier = new Subject<void>();
 
@@ -44,6 +45,11 @@ export class NotesComponent {
   }
 
   fetchMyNotes() {
+    this.notesService.getOtherUsers().subscribe({
+      next: (response: any) => {
+        this.otherUsers = response;
+      },
+    });
     this.notesService
       .getMyNotes()
       .pipe(takeUntil(this.notifier))

@@ -11,6 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class ShareNoteComponent {
   @Input() noteId = '';
+  @Input() otherUsers = [];
   private notifier = new Subject<void>();
   errorMessage!: string;
 
@@ -25,12 +26,13 @@ export class ShareNoteComponent {
 
   ngOnInit() {
     console.log(this.noteId);
-    if (this.noteId) {
-      this.notesService.getOtherUsers().subscribe({
-        next: (response: any) => {
-          this.dropdownList = response;
-        },
-      });
+    if (this.noteId && this.otherUsers.length) {
+      this.dropdownList = this.otherUsers;
+      // this.notesService.getOtherUsers().subscribe({
+      //   next: (response: any) => {
+      //     this.dropdownList = response;
+      //   },
+      // });
 
       this.notesService.getSharedUsers(this.noteId).subscribe({
         next: (response: any) => {

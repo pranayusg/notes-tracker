@@ -16,6 +16,7 @@
       <app-notes-item
         [noteItem]="item"
         [noteType]="type"
+        [otherUsers]="otherUsers"
         (reloadNotesAfterEdit)="reFetchNotes($event)"
         (reloadNotesAfterDelete)="reFetchNotes($event)"
       ></app-notes-item>

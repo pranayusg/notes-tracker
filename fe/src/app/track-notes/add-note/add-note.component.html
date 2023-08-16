@@ -43,9 +43,10 @@
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label" for="textId">Text</label>
         <div class="col-md-8">
-          <input
+          <textarea
             class="form-control"
             id="textId"
+            rows="4"
             type="text"
             placeholder="Text (required)"
             required
@@ -56,7 +57,7 @@
             [ngClass]="{
               'is-invalid': (textVar.touched || textVar.dirty) && !textVar.valid
             }"
-          />
+          ></textarea>
           <span class="invalid-feedback">
             <span *ngIf="textVar.errors?.['required']">
               Please enter note text.

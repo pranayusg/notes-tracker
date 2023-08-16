@@ -9,7 +9,10 @@
           </div>
         </div>
         <div *ngIf="noteType === 'my'" class="col-md-1 mr-0 pr-0">
-          <app-share-note [noteId]="noteItem.id"></app-share-note>
+          <app-share-note
+            [otherUsers]="otherUsers"
+            [noteId]="noteItem.id"
+          ></app-share-note>
         </div>
         <div *ngIf="noteType !== 'my'" class="col-md-3 mr-0 pr-0">
           <p>Shared by: {{ noteItem.user.userName }}</p>

@@ -11,6 +11,7 @@ import { alertHelpers } from 'src/app/helpers/alertsHelper';
 export class NotesItemComponent {
   @Input() noteItem: any = {};
   @Input() noteType: string = 'my';
+  @Input() otherUsers = [];
   @Output() reloadNotesAfterEdit: EventEmitter<string> =
     new EventEmitter<string>();
   @Output() reloadNotesAfterDelete: EventEmitter<string> =
