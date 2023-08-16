@@ -13,14 +13,13 @@ import { environment } from 'src/environments/environment';
 })
 export class NotesService {
   private Url = environment.apiEndpoint;
-  private Token = auth.getToken();
 
   constructor(private http: HttpClient) {}
 
   getMyNotes(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .get<any>(`${this.Url}/note/mynotes`, { headers })
@@ -30,7 +29,7 @@ export class NotesService {
   getNoteById(noteId: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .get<any>(`${this.Url}/note/${noteId}`, { headers })
@@ -40,7 +39,7 @@ export class NotesService {
   createNote(note: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .post<any>(`${this.Url}/note`, note, { headers })
@@ -50,7 +49,7 @@ export class NotesService {
   editNote(noteId: string, note: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .patch<any>(`${this.Url}/note/${noteId}`, note, { headers })
@@ -63,7 +62,7 @@ export class NotesService {
   deleteNote(id: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http.delete<any>(`${this.Url}/note/${id}`, { headers }).pipe(
       // tap((data) => {console.log('sign in : ' + JSON.stringify(data))}),
@@ -74,7 +73,7 @@ export class NotesService {
   searchNotes(text: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .get<any>(`${this.Url}/note/search/note?note=${text}`, { headers })
@@ -87,7 +86,7 @@ export class NotesService {
   getOtherUsers(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http.get<any>(`${this.Url}/users`, { headers }).pipe(
       // tap((data) => {console.log('sign in : ' + JSON.stringify(data))}),
@@ -98,7 +97,7 @@ export class NotesService {
   getSharedUsers(noteId: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .get<any>(`${this.Url}/note/shared/note/users?noteId=${noteId}`, {
@@ -113,7 +112,7 @@ export class NotesService {
   createSharedNote(payload: any): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .post<any>(`${this.Url}/note/shared/note`, payload, {
@@ -128,7 +127,7 @@ export class NotesService {
   getSharedNotes(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.Token}`,
+      Authorization: `Bearer ${auth.getToken()}`,
     });
     return this.http
       .get<any>(`${this.Url}/note/shared/note`, {
