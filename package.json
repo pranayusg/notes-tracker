@@ -5,7 +5,6 @@
 		"node": ">=18 <19"
 	},
 	"scripts": {
-		"prebuild": "cd be && npm run build",
 		"build": "cd be && npm run start:prod",
 		"start": "cd fe && npm run prod"
 	}
