@@ -20,8 +20,8 @@
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/8ac19164-c40b-4930-95ad-55a916c76486)
 
  - my-notes
-   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/a7ffd160-3bc8-4040-a1c7-fe3c6525013a)
- 
+   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/78e66818-0029-4046-8f3c-6f535a04e868)
+
  - 404
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/40974a3f-33ff-4499-ad35-bb84b4bb6b4a)
 
@@ -32,7 +32,7 @@
   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/e98218dc-2825-4033-bc45-4566f7436397)
 
  - CRUD operations on Notes.
-   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/3d5dbf14-eddb-453b-b01b-ca4c17fc36d1)
+   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/682991b7-0587-4aee-aee4-f546579e23b4)
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/e50b82cb-e191-43a6-a128-f99db586b4d3)
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/1fd576a4-2342-4f5d-bfdb-3a1c9d212e32)
    
