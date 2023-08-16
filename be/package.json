@@ -2,6 +2,9 @@
   "name": "notes-nest-api",
   "version": "0.0.1",
   "description": "A place to manage your notes",
+  "engines": {
+    "node": ">=18 <19"
+  },
   "author": "",
   "private": true,
   "license": "UNLICENSED",
