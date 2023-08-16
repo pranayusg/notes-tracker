@@ -5,9 +5,24 @@ import { AppService } from './app.service';
 import { NoteModule } from './note/note.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { getTypeOrmConfiguration } from './config/typeorm.config';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), NoteModule, UsersModule, AuthModule],
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: [`.env.stage.${process.env.STAGE}`],
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) =>
+        getTypeOrmConfiguration(configService),
+    }),
+    NoteModule,
+    UsersModule,
+    AuthModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
