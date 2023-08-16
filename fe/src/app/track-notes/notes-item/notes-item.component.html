@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body" [style.background-color]="noteItem.color">
       <div id="text">"{{ noteItem.text }}"</div>
     </div>
     <div *ngIf="noteType === 'my'" class="card-footer">

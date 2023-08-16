@@ -1,5 +1,5 @@
 export class NewNote {
-  constructor(public title = '', public text = '') {}
+  constructor(public title = '', public text = '', public color = 'white') {}
 }
 
 export interface Note {

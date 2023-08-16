@@ -69,6 +69,53 @@
         </div>
       </div>
 
+      <div class="form-group row mt-2 mb-2">
+        <label class="col-md-4 col-form-label" for="textId"
+          >Select note background color:</label
+        >
+
+        <div class="col-md-1 form-check-inline">
+          <input
+            class="form-control form-check-input"
+            type="radio"
+            name="color"
+            id="color1"
+            [(ngModel)]="newNote.color"
+            checked
+            value="white"
+          />
+          <label class="form-check-label" for="flexRadioDefault1">
+            White
+          </label>
+        </div>
+
+        <div class="col-md-1 form-check-inline">
+          <input
+            class="form-control form-check-input"
+            type="radio"
+            name="color"
+            id="color2"
+            [(ngModel)]="newNote.color"
+            value="#fde973"
+          />
+          <label class="form-check-label" for="flexRadioDefault2">
+            Yellow
+          </label>
+        </div>
+
+        <div class="col-md-1 form-check-inline">
+          <input
+            class="form-control form-check-input"
+            type="radio"
+            name="color"
+            id="color2"
+            [(ngModel)]="newNote.color"
+            value="#f0b5e3"
+          />
+          <label class="form-check-label" for="flexRadioDefault2"> Pink </label>
+        </div>
+      </div>
+
       <div class="form-group row mb-3 mt-4">
         <div class="col-md-12" style="float: right; margin: auto; width: 50%">
           <button

@@ -36,6 +36,7 @@ export class AddNoteComponent {
         next: (response) => {
           this.newNote.title = response.title;
           this.newNote.text = response.text;
+          this.newNote.color = response.color;
         },
         error: (err) => (this.errorMessage = err),
       });
@@ -70,7 +71,7 @@ export class AddNoteComponent {
     let payload: Note = {
       title: newQuoteForm.value.title,
       text: newQuoteForm.value.text,
-      color: 'white',
+      color: newQuoteForm.value.color,
     };
 
     if (this.type === 'add')
