@@ -10,7 +10,10 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const configService: ConfigService = app.get<ConfigService>(ConfigService);
-  const port = configService.get('APP_PORT');
+  const port =
+    process.env.STAGE === 'dev'
+      ? configService.get('APP_PORT')
+      : process.env.PORT;
 
   const config = new DocumentBuilder()
     .setTitle('Notes Management')
