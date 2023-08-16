@@ -7,15 +7,15 @@
           <div *ngIf="noteType === 'my'" class="moment-date">
             {{ noteItem.user.createdAt | amDateFormat : "LL" }}
           </div>
+          <div *ngIf="noteType !== 'my'" class="text-center">
+            <p>Shared by: {{ noteItem.user.userName }}</p>
+          </div>
         </div>
         <div *ngIf="noteType === 'my'" class="col-md-1 mr-0 pr-0">
           <app-share-note
             [otherUsers]="otherUsers"
             [noteId]="noteItem.id"
           ></app-share-note>
-        </div>
-        <div *ngIf="noteType !== 'my'" class="col-md-3 mr-0 pr-0">
-          <p>Shared by: {{ noteItem.user.userName }}</p>
         </div>
       </div>
     </div>
