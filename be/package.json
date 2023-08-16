@@ -21,7 +21,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "migration:generate": "node --require ts-node/register ./node_modules/typeorm/cli.js migration:generate -n NotesManagement",
     "migration:run": "node --require ts-node/register ./node_modules/typeorm/cli.js migration:run",
-    "migration:revert": "node --require ts-node/register ./node_modules/typeorm/cli.js migration:revert"
+    "migration:revert": "node --require ts-node/register ./node_modules/typeorm/cli.js migration:revert",
+    "rimraf": "./node_modules/rimraf/bin.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
