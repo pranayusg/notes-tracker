@@ -33,7 +33,7 @@
 
  - CRUD operations on Notes.
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/682991b7-0587-4aee-aee4-f546579e23b4)
-   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/e50b82cb-e191-43a6-a128-f99db586b4d3)
+   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/e49c3543-5d1c-4ac0-af5f-32de60eac1ab)
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/1fd576a4-2342-4f5d-bfdb-3a1c9d212e32)
    
  - Signout  
