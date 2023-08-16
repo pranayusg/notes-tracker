@@ -1,6 +1,10 @@
  # notes-tracker
  All Your Notes In One Place.
 
+ # Deployed to Render
+ - FE - https://pranayusg-notes-tracker-app.onrender.com
+ - BE - https://pranayusg-notes-tracker.onrender.com/api/
+
  # Tech Stack
  - Angular 16
  - NestJS
