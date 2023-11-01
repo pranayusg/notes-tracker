@@ -1,19 +1,19 @@
- # notes-tracker
+ # Notes-tracker
  All Your Notes In One Place.
 
- # Live demo
+ ## Live demo
  - FE - https://pranayusg-note-tracker.vercel.app
  - BE - https://pranayusg-notes-tracker.onrender.com/api/
 
- # Tech Stack
+ ## Tech Stack
  - Angular 16
  - NestJS
  - Postgres
 
- # Setup project
+ ## Setup project
  To set up the project view README files in their respective folders.
 
- # Screens
+ ## Screens
  - Home
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/a48fd982-058a-4d59-b52a-9ed5a5fc50fa)
 
@@ -30,7 +30,7 @@
    ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/40974a3f-33ff-4499-ad35-bb84b4bb6b4a)
 
 
- # Main Functionalities  
+ ## Main Functionalities  
  - User JWT authentication.
    Used **PassportJS** along with JWT strategy to generate tokens from BE.
   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/e98218dc-2825-4033-bc45-4566f7436397)
@@ -43,7 +43,7 @@
    
  - Signout  
 
-# Additional Features
+## Additional Features
  - Search through my notes(case insensitive search, ILIKE used in BE).
 
   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/d275fcf0-3b55-4f88-bbd9-d117c6c3e923)
@@ -61,7 +61,7 @@
   ![image](https://github.com/pranayusg/notes-tracker/assets/66126225/865e4ad9-43fb-4ac0-9342-9ce723a6ee6b)
 
 
-# Angular features used
+## Angular features used
  - Forms validations (Template driven forms used).
  - Route Guards.
  - Component communication (Child to parent and Parent to child).
@@ -69,7 +69,7 @@
  - Routing
  - Environment setup
 
-# NestJS features used
+## NestJS features used
  - Route validations.
  - Proper error messages (404,500,200)
  - Passport authentication.
